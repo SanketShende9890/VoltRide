@@ -1,0 +1,93 @@
+nav{
+    height: 80px;
+    position: relative;
+}
+.login-btn{
+    background-color: #A7CE02;
+    color: #000;
+    border-radius: 10px;
+}
+.signup-btn{
+    border: 1px solid #A7CE02;
+    color: #A7CE02;
+    background-color: transparent;
+    border-radius: 10px;
+}
+.login-btn:hover{
+    color: #000;
+    background-color: #596c00;
+}
+
+.signup-btn:hover{
+    background-color: #A7CE02;
+    color: #000;
+}
+.web-menu{
+    display: none;
+}
+.mob-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #A7CE02;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.mob-menu-tray{
+    display: block;
+    position: fixed;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #2B282E;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+}
+.mob-menu-tray ul{
+    padding: 100px 0;
+}
+
+.mob-menu-tray li{
+    list-style: none;
+    text-align: center;
+    padding: 10px 0;
+
+}
+.mob-menu-tray li:hover{
+    background-color: #464646;
+}
+
+.mob-menu-tray a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 600;
+}
+.mob-menu-tray svg{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 50px;
+    font-weight: 600;
+    border-radius: 50%;
+}
+.mob-menu-tray svg:hover{
+   background-color: #464646;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .web-menu{
+        display: flex;
+    }
+    .mob-menu{
+        display: none;
+    }
+    .mob-menu-tray{
+        display: none;
+
+    }
+}

@@ -1,0 +1,283 @@
+.main-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.input-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 10px;
+  border: 2px solid #a7ce02;
+  background-color: transparent;
+  border-radius: 10px;
+}
+.input-section input {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 22px;
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+}
+
+.input-section svg {
+  color: #a7ce02 !important;
+  font-size: 26px;
+  margin-right: 10px;
+}
+
+.vehicle-option-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+}
+.vehicle-option-toggle h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #464646;
+  cursor: pointer;
+}
+.text-active {
+  color: #a7ce02 !important;
+}
+
+.toggle-section {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #2b282e;
+  height: 45px;
+  width: 140px;
+  border-radius: 10px;
+  padding: 4px;
+}
+.toggle-section svg {
+  cursor: pointer;
+  font-size: 28px;
+  width: 55px;
+}
+
+.toggle-btn {
+  position: absolute;
+  left: 2px;
+  background-color: #a7ce02;
+  height: 41px;
+  width: 66px;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.toggle-btn svg{
+  color: #000;
+}
+.toggle-btn-bike {
+  transform: translateX(69px);
+}
+.toggle-btn-car {
+  transform: translateX(0);
+}
+
+.vehicle-option-content {
+  width: 100%;
+}
+.vehicle-option-buttons {
+  display: none;
+}
+.vehicle-option-buttons-mobile {
+  display: flex;
+  padding: 10px;
+  width: 100%;
+}
+.vehicle-option-buttons-mobile button {
+    white-space: nowrap;
+    width: 100%;
+    height: 58.4px;
+    background-color: #2b282e;
+    color: #fff;
+    border: none;
+    margin: 0 10px;
+    padding: 5px;
+    border-radius: 10px;
+}
+.mobile-scroller{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid #a7ce02;
+    
+    height: 80px;
+    padding: 10px;
+    
+}
+.web-scroller{
+  border-radius: 10px;
+    border: 1px solid #a7ce02;
+    padding: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.web-prev-btn , .web-next-btn{
+  background-color: transparent !important;
+  border: 1px solid #a7ce02 !important;
+  padding: 5px !important;
+}
+.web-next-btn{
+  margin-top: auto;
+}
+.scroller-web-btn-section{
+  height: 100%;
+  overflow-y: scroll;
+}
+.scroller-mob-btn-section{
+    width: 100%;
+    overflow-x: scroll;
+    display: flex;
+}
+.scroller-mob-btn-section::-webkit-scrollbar{
+    display: none;
+}
+.mob-scr-btn{
+    margin: 0 !important;
+    transition: all 0.3s ease;
+}
+.mob-scr-btn:hover{
+background-color: #d9ff2c !important;
+}
+.mob-prev-btn, .mob-next-btn{
+    border: 1px solid #a7ce02 !important;
+    background-color: transparent !important;
+    padding: 10px;
+    width: fit-content !important;
+    height: 100%;
+}
+.mob-scr-btn svg{
+    color: #a7ce02;
+    font-size: 20px;
+    margin: 0 6px;
+}
+
+@media only screen and (min-width: 768px) {
+  .vehicle-option-buttons {
+    display: block;
+    height: 320px;
+    overflow-y: scroll;
+    padding: 0 20px;
+  }
+  .vehicle-option-buttons-mobile {
+    display: none;
+  }
+
+  .vehicle-bg-image {
+    height: 100% !important;
+  }
+}
+.vehicle-option-buttons button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 15px 10px;
+  background-color: #2b282e;
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+}
+
+
+.btn-active {
+  background-color: #a7ce02 !important;
+  color: #000 !important;
+}
+.vehicle-image {
+  border-radius: 10px;
+}
+.vehicle-bg-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  height: 320px;
+  width: 100%;
+}
+
+.vehicle-option-details {
+}
+.vehicle-bg img {
+}
+.vehicle-info {
+}
+.vehicle-info-tag {
+  background-color: #a7ce02;
+  border-radius: 10px;
+  color: #000;
+  padding: 10px;
+}
+.vehicle-info-tag h3 {
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0;
+}
+.vehicle-info-tag span {
+  font-weight: 600;
+}
+.vehicle-info-tag p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.vehicle-info-content {
+  padding: 5px 0;
+}
+
+.vehicle-info-content p {
+  font-size: 15px;
+  margin: 0;
+}
+.vehicle-rent-section{
+
+}
+.vehicle-rent-section h3{
+  color: #a7ce02;
+  font-weight: 600;
+  text-align: center;
+
+}
+.vehicle-rent-section input{
+  background-color: #29282F;
+  padding: 12px 8px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+}
+.vehicle-rent-section input:focus-visible{
+  outline: 1px auto #a7ce02;
+}
+.btn-custom-neo{
+  color: #a7ce02;
+  border: 1px solid #a7ce02;
+}
+.btn-custom-neo:hover{
+  background-color: #a7ce02;
+  color: #000;
+}
+.career-section{
+  background-color: #29282F;
+  color: #fff;
+  padding: 30px;
+  margin: 60px 0;
+  max-width: 100%;
+}
