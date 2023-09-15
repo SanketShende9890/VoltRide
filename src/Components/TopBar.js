@@ -11,18 +11,42 @@ const TopBar = () => {
     setMobMenuActive(!mobMenuActive);
   };
   return (
-    <nav className="w-100 container d-flex justify-content-between align-items-center">
+    <nav className="w-100 container-fluid d-flex justify-content-between align-items-center">
+      
+      <div className="web-menu">
+      <ul className="d-flex">
+              <li>
+                HOME
+              </li>
+              <li>
+                WHY US?
+              </li>
+              <li>
+                MODELS
+              </li>
+            </ul>
+      </div>
+
       <div>
         <a href="/">
-          <img src={logo} alt="logo" />
+          <img width={130} src={logo} alt="logo" />
         </a>
       </div>
       <div onClick={webMenu} className="mob-menu">
-        {mobMenuActive ? <IoClose /> : <FaBarsStaggered />}
+        {mobMenuActive ? <IoClose /> : <FaBarsStaggered style={{color: '#000'}}/>}
 
         {mobMenuActive ? (
           <div className="mob-menu-tray">
             <ul>
+            <li>
+                <a href="/">HOME</a>
+              </li>
+              <li>
+                <a href="/">WHY US?</a>
+              </li>
+              <li>
+                <a href="/">MODELS</a>
+              </li>
               <li>
                 <a href="/">LOG IN</a>
               </li>
@@ -36,8 +60,8 @@ const TopBar = () => {
       </div>
 
       <div className="web-menu">
-        <button className="login-btn btn ms-4">LOG IN</button>
-        <button className="signup-btn btn ms-4">SIGN UP</button>
+        <button className="login-btn btn-sm btn ms-4">LOG IN</button>
+        <button className="signup-btn btn-sm btn ms-4">SIGN UP</button>
       </div>
     </nav>
   );

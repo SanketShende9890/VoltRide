@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700;800;900&family=Inter:wght@200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Titillium+Web:wght@200;300;400;600;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Great+Vibes&family=Inconsolata:wght@400;500;600;700;800;900&family=Inter:wght@200;300;400;500;600;700;800;900&family=League+Spartan:wght@100;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&family=PT+Sans+Narrow:wght@400;700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Titillium+Web:wght@200;300;400;600;700;900&display=swap');
 
 body {
   margin: 0;
@@ -6,7 +6,7 @@ body {
   box-sizing: border-box;
   font-family: "Poppins";
   color: #fff;
-  background-color: #000;
+  background-color: #161517;
 }
 *{
   margin: 0;

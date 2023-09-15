@@ -28,13 +28,28 @@
   font-size: 26px;
   margin-right: 10px;
 }
-
+.vehicle-heading-web{
+  display: none;
+}
+.vehicle-heading-mob{
+  display: flex;
+}
+@media only screen and (min-width: 786px) {
+  .vehicle-heading-web{
+    display: flex;
+  }
+  .vehicle-heading-mob{
+    display: none;
+  }
+}
 .vehicle-option-toggle {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 10px 0;
+  margin-top: 60px;
 }
 .vehicle-option-toggle h2 {
   font-size: 40px;
@@ -58,6 +73,7 @@
   padding: 4px;
 }
 .toggle-section svg {
+  color: #515151;
   cursor: pointer;
   font-size: 28px;
   width: 55px;
@@ -169,8 +185,11 @@ background-color: #d9ff2c !important;
     font-size: 20px;
     margin: 0 6px;
 }
+.mob-scr-btn:hover svg{
+  color: #000;
+}
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .vehicle-option-buttons {
     display: block;
     height: 320px;
@@ -241,14 +260,15 @@ background-color: #d9ff2c !important;
 
 .vehicle-info-content {
   padding: 5px 0;
+  border-bottom: 1px solid #2b282e;
 }
 
 .vehicle-info-content p {
-  font-size: 15px;
+  font-size: 17px;
   margin: 0;
 }
 .vehicle-rent-section{
-
+  width: 100%;
 }
 .vehicle-rent-section h3{
   color: #a7ce02;
@@ -278,6 +298,25 @@ background-color: #d9ff2c !important;
   background-color: #29282F;
   color: #fff;
   padding: 30px;
-  margin: 60px 0;
+  margin: 100px 0;
   max-width: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+@media only screen and (min-width: 786px) {
+.career-section{
+  padding: 14px 30px ;
+
+}
+  
+}
+.career-section p{
+  font-size: 14px;
+}
+
+.career-bold-text{
+  color: #a7ce02;
+  font-size: 32px;
+  font-weight: 600;
 }
