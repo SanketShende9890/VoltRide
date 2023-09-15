@@ -1,29 +1,23 @@
 nav{
-    height: 70px;
+    height: 60px;
     position: relative;
 }
 .login-btn{
     background-color: #A7CE02;
     color: #000;
-    border: 2px solid #000;
-    /* border-radius: 8px; */
+    border: 1px solid #000;
     font-weight: 600;
-
 }
 .signup-btn{
-    color: #FFF;
-    background-color: #2b282e;
-    /* background-color: #A7CE02;
-    color: #000; */
-    border: 2px solid #000;
-    /* border-radius: 8px; */
+    color: #000;
+    background-color: #fff;
+    /* border: 2px solid #000; */
     font-weight: 600;
 }
 .login-btn:hover{
     color: #FFF;
     background-color: #2b282e;
 }
-
 .signup-btn:hover{
     color: #FFF;
     background-color: #2b282e;
@@ -38,8 +32,8 @@ nav{
 
 .web-menu li{
     list-style: none;
-    margin: 0 10px;
-    font-size: 16px;
+    margin: 0 16px;
+    font-size: 14px;
     font-weight: 600;
     color: #000;
     cursor: pointer;
@@ -47,7 +41,6 @@ nav{
 .web-menu li:hover{
     color: #2b282e;
 }
-
 .mob-menu{
     display: flex;
     justify-content: center;
@@ -60,7 +53,6 @@ nav{
 .mob-menu svg{
     font-size: 25px;
 }
-
 .mob-menu-tray{
     display: block;
     position: fixed;
@@ -78,17 +70,14 @@ nav{
     height: 100vh;
     padding: 100px 0;
 }
-
 .mob-menu-tray li{
     list-style: none;
     text-align: center;
     padding: 15px 0;
-
 }
 .mob-menu-tray li:hover{
     background-color: #464646;
 }
-
 .mob-menu-tray a{
     text-decoration: none;
     color: #fff;
@@ -106,8 +95,6 @@ nav{
 .mob-menu-tray svg:hover{
    background-color: #464646;
 }
-
-
 @media only screen and (min-width: 768px) {
     .web-menu{
         display: flex;

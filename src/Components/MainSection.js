@@ -195,44 +195,15 @@ const MainSection = () => {
         </div>
       </div>
       <div className="row vehicle-option-buttons-mobile">
-        <div className="col-12 mobile-scroller">
-          <button
-            onClick={() => smoothHorizontalScroll(-100)}
-            className="mob-prev-btn mob-scr-btn"
-          >
-            <BiSolidLeftArrow />
-          </button>
-          <div ref={scrollableMobRef} className="scroller-mob-btn-section">
-            {button.map((item, index) => (
-              <button
-                key={index}
-                className={`${activeBtn === index ? "btn-active" : ""}`}
-                onClick={() => activateBtn(index)}
-              >
-                {item}
-              </button>
-            ))}
-          </div>
-
-          <button
-            onClick={() => smoothHorizontalScroll(100)}
-            className="mob-next-btn mob-scr-btn"
-          >
-            <BiSolidRightArrow />
-          </button>
-        </div>
-      </div>
-
-      <div className="vehicle-option-content row">
-        <div className="vehicle-option-buttons col-12 col-lg-4 my-3">
-          <div className="web-scroller ">
+        {carActive ? (
+          <div className="col-12 mobile-scroller">
             <button
-              onClick={() => smoothVerticalScroll(-75)}
-              className="web-prev-btn mob-scr-btn"
+              onClick={() => smoothHorizontalScroll(-100)}
+              className="mob-prev-btn mob-scr-btn"
             >
-              <BiSolidUpArrow />
+              <BiSolidLeftArrow />
             </button>
-            <div ref={scrollableWebRef} className="scroller-web-btn-section">
+            <div ref={scrollableMobRef} className="scroller-mob-btn-section">
               {button.map((item, index) => (
                 <button
                   key={index}
@@ -243,86 +214,150 @@ const MainSection = () => {
                 </button>
               ))}
             </div>
+
             <button
-              onClick={() => smoothVerticalScroll(75)}
-              className="web-next-btn mob-scr-btn"
+              onClick={() => smoothHorizontalScroll(100)}
+              className="mob-next-btn mob-scr-btn"
             >
-              <BiSolidDownArrow />
+              <BiSolidRightArrow />
             </button>
           </div>
-        </div>
-
-        <div className="vehicle-image my-3 d-flex justify-content-center align-items-center col-12 col-lg-4">
-          <div
-            style={{
-              backgroundImage: `url(${"https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Tiago-EV/6279/1676111344905/front-left-side-47.jpg"})`,
-            }}
-            className="vehicle-bg-image"
-          ></div>
-        </div>
-        <div className="col-12 col-lg-4 my-3">
-          <div className="mb-2 vehicle-info-tag d-flex justify-content-around align-items-center">
-            <div>
-              <h3>₹350/hr</h3>
-            </div>
-            <div className="d-flex justify-content-center align-items-center">
-              <AiFillStar />
-              <span>4.8</span>
-            </div>
-            <div>
-              <p>Available</p>
-            </div>
-          </div>
-
-          <VehicleInfo title={"Range"} value={"456KM"} />
-          <VehicleInfo title={"Charging Time"} value={"50 Minutes"} />
-          <VehicleInfo title={"Seating Capacity"} value={"5 Seats"} />
-          <VehicleInfo title={"Air Conditioner"} value={true} />
-          <VehicleInfo title={"Anti-Lock Braking System"} value={true} />
-          <VehicleInfo title={"Body Type"} value={"SUV"} />
-          <VehicleInfo title={"Steering Type"} value={"Electric"} />
-        </div>
+        ) : null}
       </div>
 
-      <div className="vehicle-rent-section mt-5 row m-0">
-        <h3 className="mb-4">Book a ride hassle free</h3>
-        <form action="">
-          <div className="row ">
-            <div className="py-2 col-12 col-md-4 d-flex flex-column justify-content-center align-items-start">
-              <label>Select Your Ride</label>
-              <input className="w-100" type="text" />
-            </div>
-            <div className="py-2 col-12 col-md-4 d-flex flex-column justify-content-center align-items-start">
-              <label>Pick Up</label>
-              <input className="w-100" type="text" />
-            </div>
-            <div className="py-2 col-12 col-md-4 d-flex flex-column justify-content-center align-items-start">
-              <label>Drop Of</label>
-              <input className="w-100" type="text" />
-            </div>
-          </div>
-          <div className="row ">
-            <div className="py-2 col-12 col-md-4 d-flex flex-column justify-content-center align-items-start">
-              <label>Pick Up</label>
-              <input className="w-100" type="text" />
-            </div>
-            <div className="py-2 col-12 col-md-4 d-flex flex-column justify-content-center align-items-start">
-              <label>Drop Of</label>
-              <input className="w-100" type="text" />
-            </div>
-            <div className=" col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+      {/* <h3>
+          Electric bikes are not available at the moment...
+        </h3> */}
+
+      <div className="vehicle-option-content row justify-content-center align-items-center">
+        <div
+          className={`vehicle-option-buttons col-12 my-3  ${
+            carActive ? " col-lg-4" : "d-none"
+          }`}
+        >
+          {carActive ? (
+            <div className="web-scroller ">
               <button
-                type="button"
-                className="mt-4 w-100 btn btn-lg btn-custom-neo btn-block"
+                onClick={() => smoothVerticalScroll(-75)}
+                className="web-prev-btn mob-scr-btn"
               >
-                BOOK NOW
+                <BiSolidUpArrow />
+              </button>
+              <div ref={scrollableWebRef} className="scroller-web-btn-section">
+                {button.map((item, index) => (
+                  <button
+                    key={index}
+                    className={`${activeBtn === index ? "btn-active" : ""}`}
+                    onClick={() => activateBtn(index)}
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+              <button
+                onClick={() => smoothVerticalScroll(75)}
+                className="web-next-btn mob-scr-btn"
+              >
+                <BiSolidDownArrow />
               </button>
             </div>
-          </div>
-        </form>
+          ) : null}
+        </div>
+
+        <div
+          style={{ position: "relative" }}
+          className={`vehicle-image my-3 d-flex justify-content-center align-items-center col-12 ${
+            carActive ? " col-lg-4" : "col-lg-6"
+          }`}
+        >
+          <div
+            style={{
+              backgroundImage: ` url(${
+                carActive
+                  ? "https://stimg.cardekho.com/images/carexteriorimages/630x420/Tata/Tiago-EV/6279/1676111344905/front-left-side-47.jpg"
+                  : "https://bd.gaadicdn.com/processedimages/ola-electric/s1-air/494X300/s1-air64d5dd80d0382.jpg?imwidth=400&impolicy=resize"
+              })`,
+            }}
+            className={`vehicle-bg-image ${carActive ? "" : "mask-for-bike"} `}
+          ></div>
+          {carActive ? (
+            ""
+          ) : (
+            <p className="mask-text">
+              Electric bikes are not available at the moment but will be
+              available shortly.
+            </p>
+          )}
+        </div>
+        <div className={`col-12 my-3 ${carActive ? " col-lg-4" : "d-none"}`}>
+          {carActive ? (
+            <>
+              <div className="mb-2 vehicle-info-tag d-flex justify-content-around align-items-center">
+                <div>
+                  <h3>₹350/hr</h3>
+                </div>
+                <div className="d-flex justify-content-center align-items-center">
+                  <AiFillStar />
+                  <span>4.8</span>
+                </div>
+                <div>
+                  <p>Available</p>
+                </div>
+              </div>
+
+              <VehicleInfo title={"Range"} value={"456KM"} />
+              <VehicleInfo title={"Charging Time"} value={"50 Minutes"} />
+              <VehicleInfo title={"Seating Capacity"} value={"5 Seats"} />
+              <VehicleInfo title={"Air Conditioner"} value={true} />
+              <VehicleInfo title={"Anti-Lock Braking System"} value={true} />
+              <VehicleInfo title={"Body Type"} value={"SUV"} />
+              <VehicleInfo title={"Steering Type"} value={"Electric"} />
+            </>
+          ) : null}
+        </div>
       </div>
 
-      <div className="career-section">
+      {carActive ? (
+        <div className="vehicle-rent-section mt-5 row m-0">
+          <h3 className="mb-4">Book a ride hassle free</h3>
+          <form action="">
+            <div className="row ">
+              <div className="py-2 col-12 col-md-4 d-flex flex-column justify-content-center align-items-start">
+                <label>Select Your Ride</label>
+                <input className="w-100" type="text" />
+              </div>
+              <div className="py-2 col-12 col-md-4 d-flex flex-column justify-content-center align-items-start">
+                <label>Pick Up</label>
+                <input className="w-100" type="text" />
+              </div>
+              <div className="py-2 col-12 col-md-4 d-flex flex-column justify-content-center align-items-start">
+                <label>Drop Of</label>
+                <input className="w-100" type="text" />
+              </div>
+            </div>
+            <div className="row ">
+              <div className="py-2 col-12 col-md-4 d-flex flex-column justify-content-center align-items-start">
+                <label>Pick Up</label>
+                <input className="w-100" type="text" />
+              </div>
+              <div className="py-2 col-12 col-md-4 d-flex flex-column justify-content-center align-items-start">
+                <label>Drop Of</label>
+                <input className="w-100" type="text" />
+              </div>
+              <div className=" col-12 col-md-4 d-flex flex-column justify-content-center align-items-center">
+                <button
+                  type="button"
+                  className="mt-4 w-100 btn btn-lg btn-custom-neo btn-block"
+                >
+                  BOOK NOW
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      ) : null}
+
+      <div className="career-section-web">
         <ScrollTrigger
           onEnter={() => setCounterOn(true)}
           onExit={() => setCounterOn(false)}
@@ -331,43 +366,47 @@ const MainSection = () => {
             <div className="col-12 col-md-3 d-flex justify-content-center align-items-center">
               <p className="text-center text-md-start">
                 Trusted by
-                <span style={{fontWeight: '700', fontSize: '18px', color: '#a7ce02'}} className="mx-2">
-
-                {counterOn && (
-                  <CountUp start={0} end={50000} duration={4} delay={0} />
+                <span
+                  style={{
+                    fontWeight: "700",
+                    fontSize: "18px",
+                    color: "#a7ce02",
+                  }}
+                  className="mx-2"
+                >
+                  {counterOn && (
+                    <CountUp start={0} end={50000} duration={4} delay={0} />
                   )}
-                + 
-                  </span>
+                  +
+                </span>
                 people across the globe
               </p>
             </div>
             <div className="col-12 col-md-3 d-flex flex-column justify-content-center align-items-center">
               <span className="d-flex career-bold-text">
-
-              {counterOn && (
-                <CountUp start={0} end={50} duration={4} delay={0} />
-                )} K+
-                </span>
+                {counterOn && (
+                  <CountUp start={0} end={50} duration={4} delay={0} />
+                )}{" "}
+                K+
+              </span>
               <p> KMS Driven</p>
             </div>
             <div className="col-12 col-md-3 d-flex flex-column justify-content-center align-items-center">
               <span className="d-flex career-bold-text">
-
-              {counterOn && (
-                <CountUp start={0} end={38} duration={4} delay={0} />
+                {counterOn && (
+                  <CountUp start={0} end={38} duration={4} delay={0} />
                 )}
-              +
-                </span>
+                +
+              </span>
               <p> Cities & counting...</p>
             </div>
             <div className="col-12 col-md-3 d-flex flex-column justify-content-center align-items-center">
-              <span className="d-flex career-bold-text"> 
-
-              {counterOn && (
-                <CountUp start={0} end={92} duration={4} delay={0} />
+              <span className="d-flex career-bold-text">
+                {counterOn && (
+                  <CountUp start={0} end={92} duration={4} delay={0} />
                 )}
-              %
-                </span>
+                %
+              </span>
               <p> Happy Customer</p>
             </div>
           </div>

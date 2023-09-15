@@ -10,48 +10,69 @@ const TopBar = () => {
   const webMenu = () => {
     setMobMenuActive(!mobMenuActive);
   };
+  const goToMain = () =>{
+    const mainSecttion = document.querySelector(".main-section");
+    if (mainSecttion) {
+      const yOffset = -60;
+      const y =
+        mainSecttion.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }
+
+  const goToHome = () =>{
+    const homeSection = document.querySelector(".hero-section");
+    if (homeSection) {
+      const yOffset = -60;
+      const y =
+        homeSection.getBoundingClientRect().top +
+        window.pageYOffset +
+        yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }
   return (
     <nav className="w-100 container-fluid d-flex justify-content-between align-items-center">
-      
+      <div style={{cursor: 'pointer'}} onClick={goToHome}>
+          <img width={130} src={logo} alt="logo" />
+      </div>
       <div className="web-menu">
       <ul className="d-flex">
-              <li>
-                HOME
+              <li onClick={goToHome}>
+                HOW IT WORKS?
               </li>
               <li>
                 WHY US?
               </li>
-              <li>
-                MODELS
+              <li onClick={goToMain}>
+                START
               </li>
             </ul>
       </div>
 
-      <div>
-        <a href="/">
-          <img width={130} src={logo} alt="logo" />
-        </a>
-      </div>
+      
       <div onClick={webMenu} className="mob-menu">
         {mobMenuActive ? <IoClose /> : <FaBarsStaggered style={{color: '#000'}}/>}
 
         {mobMenuActive ? (
           <div className="mob-menu-tray">
             <ul>
-            <li>
-                <a href="/">HOME</a>
+            <li onClick={goToHome}>
+                HOW IT WORKS?
               </li>
               <li>
-                <a href="/">WHY US?</a>
+                WHY US
+              </li>
+              <li onClick={goToMain}>
+                START
               </li>
               <li>
-                <a href="/">MODELS</a>
+                LOG IN
               </li>
               <li>
-                <a href="/">LOG IN</a>
-              </li>
-              <li>
-                <a href="/">SIGN UP</a>
+                SIGN UP
               </li>
             </ul>
             <IoClose />

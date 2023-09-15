@@ -59,6 +59,7 @@
 }
 .text-active {
   color: #a7ce02 !important;
+  font-size: 50px;
 }
 
 .toggle-section {
@@ -200,9 +201,9 @@ background-color: #d9ff2c !important;
     display: none;
   }
 
-  .vehicle-bg-image {
+  /* .vehicle-bg-image {
     height: 100% !important;
-  }
+  } */
 }
 .vehicle-option-buttons button {
   width: 100%;
@@ -214,7 +215,23 @@ background-color: #d9ff2c !important;
   border: none;
   font-weight: 600;
 }
-
+.mask-for-bike{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.3;
+  z-index: 0;
+}
+.mask-text{
+  position: absolute;
+  color: #fff;
+  z-index: 2;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 40px;
+}
 
 .btn-active {
   background-color: #a7ce02 !important;
@@ -294,7 +311,28 @@ background-color: #d9ff2c !important;
   background-color: #a7ce02;
   color: #000;
 }
-.career-section{
+.career-section-mob{
+  display: none;
+}
+.cta-btn-mob{
+  display: block;
+}
+@media only screen and (min-width: 786px) {
+  .career-section-mob{
+    display: block;
+    background-color: rgba(41, 40, 47, 0.344);
+    backdrop-filter: blur(2px); 
+    color: #fff;
+    padding: 30px;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 10px;
+  }
+  .cta-btn-mob{
+    display: none;
+  }
+}
+.career-section-web{
   background-color: #29282F;
   color: #fff;
   padding: 30px;
@@ -303,16 +341,16 @@ background-color: #d9ff2c !important;
   width: 100%;
   border-radius: 10px;
 }
-
 @media only screen and (min-width: 786px) {
-.career-section{
+.career-section-mob, .career-section-web{
   padding: 14px 30px ;
 
 }
   
 }
-.career-section p{
+.career-section-mob, .career-section-web p{
   font-size: 14px;
+  margin: 0;
 }
 
 .career-bold-text{
